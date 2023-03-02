@@ -1,10 +1,23 @@
 
 const NotaAbuscar = document.querySelector("#BuscarNota");
-const form = document.querySelector("#Buscar-Form");
-const div = document.querySelector("#Buscar-div");
+const formBuscar = document.querySelector("#Buscar-Form");
+const divBuscar = document.querySelector("#Buscar-div");
 
-form.addEventListener("submit", (event) => {
+formBuscar.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  div.innerHTML = "Nota Encontrada: " + NotaAbuscar.value ;
+  divBuscar.innerHTML = "Nota Encontrada: " + NotaAbuscar.value ;
+});
+
+let notas = [];
+window.onload = function () {
+  window.notas = [];
+};
+const formCrearNota = document.querySelector("#Crear-Form");
+const divCrearNota = document.querySelector("#Crear-div");
+formCrearNota.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const fechaActual = new Date();
+
+  divCrearNota.innerHTML = "La Nota ha sido creada correctamente el " + fechaActual ;
 });
